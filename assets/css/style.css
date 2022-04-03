@@ -92,3 +92,9 @@ just for appearance; change whatever you want
 .indicator.active {
   background-color: tomato;
 }
+
+.control--pause span {
+  position: absolute;
+  opacity: 0;
+  /* z-index: -10; */
+}
