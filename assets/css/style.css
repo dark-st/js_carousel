@@ -4,7 +4,8 @@
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-family: "Rubik";
   background-color: white;
 }
 
@@ -14,6 +15,8 @@ a {
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -237,4 +240,149 @@ h1 {
 .footer {
   background-color: #e1e1e3;
   box-shadow: 0 -1px 5px black;
+}
+
+.footer__container {
+  width: 100vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 20px 20px;
+}
+
+.footer-subs,
+.footer-description {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+.footer-subs,
+.footer-description {
+  margin-bottom: 60px;
+}
+.footer__heading {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Rubik";
+  margin-right: 120px;
+}
+
+.footer-form {
+  width: 25vw;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: auto auto;
+  /* border-bottom: 3px solid #bbbbbb; */
+  position: relative;
+  overflow: hidden;
+  margin-left: 120px;
+}
+
+.footer-form::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  right: 0;
+  height: 3px;
+  bottom: 0;
+  background-color: #bbbbbb;
+  transition: 0.7s ease-in-out;
+}
+
+.footer-form::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  right: 50%;
+  height: 3px;
+  bottom: 0;
+  background-color: #cc5500;
+  transition: 0.7s ease-in-out;
+}
+
+.footer-form:focus-within:after {
+  width: 100%;
+  right: 0;
+}
+
+.footer-form:focus-within::before {
+  width: 0;
+  right: 50%;
+}
+
+.footer-form__email {
+  font-size: 30px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 5px;
+  /* position: relative;
+  overflow: hidden; */
+}
+
+.footer-form__btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: transparent;
+  width: fit-content;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 1em;
+  transition: color 0.5s;
+}
+
+.footer-form__btn:hover,
+.footer-form__btn:focus {
+  color: #cc5500;
+}
+
+.fa-submit-icon {
+  transform: scale(2);
+}
+
+.footer-description__content {
+  margin: 0 120px 0 0;
+  font-size: 18px;
+}
+
+.footer-media {
+  margin-left: 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-media__item {
+  margin: 0.75em 0 0.75em 0;
+}
+
+.footer-media__link {
+  font-size: 18px;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid transparent;
+  transition: 0.5s;
+}
+
+.footer-media__link:hover,
+.footer-media__link:focus {
+  border-bottom-color: black;
+}
+
+.media-icon {
+  transform: scale(1.5);
+  color: black;
+  transition: 0.5s;
+}
+
+.media-icon:hover,
+.media-icon:focus {
+  color: #cc5500;
+}
+
+.footer__copyright {
+  text-align: center;
+  color: black;
 }
