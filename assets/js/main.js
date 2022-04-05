@@ -4,7 +4,7 @@ import SwipeCarousel from './advanced-carousel.js';
 const carousel = new SwipeCarousel({
   containerID: '#carousel',
   slideID: '.slide',
-  interval: 2000,
+  interval: 5000,
   isPlaying: true,
 });
 

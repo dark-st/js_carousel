@@ -7,21 +7,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&family=Rubik+Wet+Paint&display=swap"
+    rel="stylesheet">
+
   <title>JS Carousel</title>
 </head>
 
 <body>
 
-  <div id="carousel" class="carousel">
-    <div id="slides-container" class="slides">
-      <div class="slide active">Slide 1</div>
-      <div class="slide">Slide 2</div>
-      <div class="slide">Slide 3</div>
-      <div class="slide">Slide 4</div>
-      <div class="slide">Slide 5</div>
-    </div>
+  <header class="header">
+    <div class="header-menu">
 
-    <script src="assets/js/main.js" type="module"></script>
+      <div class="header-menu__container">
+        <div class="header-logo">
+          <a href="#" class="header-logo__link"><img src="assets/img/logo-square.svg" alt="Square Studio"
+              class="header-logo__img"></a>
+        </div>
+
+        <nav class="header-navbar">
+
+          <ul class="header-navbar__list">
+            <li class="header-navbar__item"><a href="#" class="header-navbar__link">Latest</a></li>
+            <li class="header-navbar__item"><a href="#" class="header-navbar__link">News</a></li>
+            <li class="header-navbar__item"><a href="#" class="header-navbar__link current">Top rated</a></li>
+            <li class="header-navbar__item"><a href="#" class="header-navbar__link">Best artists</a></li>
+            <li class="header-navbar__item"><a href="#" class="header-navbar__link">Our partners</a></li>
+          </ul>
+
+        </nav>
+
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main-content">
+    <h1><span class="heading-accent">Top rated</span> landspace photos 2021</h1>
+    <div id="carousel" class="carousel">
+      <div id="slides-container" class="slides">
+        <div class="slide active"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+      </div>
+      <script src="assets/js/main.js" type="module"></script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+
+      <div class="footer-right">
+        <span>Get the best of Square Studio delivered to your inbox weekly</span>
+        <p>Square Studio inspires and support a creative community all over the world. We explore best news, inspiration
+          in creativity for you to help you succeed.</p>
+      </div>
+
+      <div class="footer-left">
+
+        <div class="footer-form">
+          <input class="footer-form__email" type="email" placeholder="Enter your email...">
+          <button class="btn" type="submit">Sign me up</button>
+        </div>
+
+        <div class="footer-media">
+          <div class="footer-media__column-1">
+            <ul class="footer-media__list">
+              <li class="footer-media__item"><a class="footer-media__link" href="#">Shop</a></li>
+              <li class="footer-media__item"><a class="footer-media__link" href="#">Contact</a></li>
+              <li class="footer-media__item"><a class="footer-media__link" href="#">About us</a></li>
+            </ul>
+
+          </div>
+
+          <div class="footer-media__column-2">
+            <ul class="footer-media__list">
+              <li class="footer-media__item"><a class="footer-media__link" href="#">Shop</a></li>
+              <li class="footer-media__item"><a class="footer-media__link" href="#">Contact</a></li>
+              <li class="footer-media__item"><a class="footer-media__link" href="#">About us</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-copyright">
+        &copy;dark-st 2022
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

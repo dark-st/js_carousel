@@ -1,4 +1,4 @@
-const {task, series, parallel, src, dest, watch} = require('gulp');
+const { task, series, parallel, src, dest, watch } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync');
 const postcss = require('gulp-postcss');
@@ -15,46 +15,41 @@ const PATH = {
   cssFiles: './assets/css/*.css',
   cssFile: './assets/css/style.css',
   htmlFiles: './*.html',
-  jsFiles: './assets/js/**/*.js'
+  jsFiles: './assets/js/**/*.js',
 };
 
 const PLUGINS = [
   autoprefixer({
-    overrideBrowserslist: [
-      'last 5 versions',
-      '> 0.1%'
-    ],
-    cascade: true
+    overrideBrowserslist: ['last 5 versions', '> 0.1%'],
+    cascade: true,
   }),
-  mqpacker({sort: sortCSSmq})
+  mqpacker({ sort: sortCSSmq }),
 ];
 
 function scss() {
-  return src(PATH.scssFile).
-    pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)).
-    pipe(postcss(PLUGINS)).
-    pipe(dest(PATH.cssFolder)).
-    pipe(browserSync.stream());
+  return src(PATH.scssFile)
+    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(postcss(PLUGINS))
+    .pipe(dest(PATH.cssFolder))
+    .pipe(browserSync.stream());
 }
 
 function scssDev() {
-  return src(PATH.scssFile, {sourcemaps: true}).
-    pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)).
-    pipe(postcss(PLUGINS)).
-    pipe(dest(PATH.cssFolder, {sourcemaps: true})).
-    pipe(browserSync.stream());
+  return src(PATH.scssFile, { sourcemaps: true })
+    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(postcss(PLUGINS))
+    .pipe(dest(PATH.cssFolder, { sourcemaps: true }))
+    .pipe(browserSync.stream());
 }
 
 function comb() {
-  return src(PATH.scssFiles).
-    pipe(csscomb()).
-    pipe(dest(PATH.scssFolder));
+  return src(PATH.scssFiles).pipe(csscomb()).pipe(dest(PATH.scssFolder));
 }
 
 function syncInit() {
   browserSync({
-    server: {baseDir: './'},
-    notify: false
+    server: { baseDir: './' },
+    notify: false,
   });
 }
 
@@ -67,7 +62,7 @@ function watchFiles() {
   watch(PATH.scssFiles, series(scss));
   watch(PATH.htmlFiles, sync);
   watch(PATH.jsFiles, sync);
-  // watch(PATH.cssFiles, sync);
+  watch(PATH.cssFiles, sync);
 }
 
 task('comb', series(comb));

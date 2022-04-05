@@ -36,7 +36,7 @@ class Carousel {
     <span id="fa-play-icon">${this.FA_PLAY}</span>
     </span>`;
     const PREV = `<span class="control control--prev" type="button" id="prev-btn">${this.FA_PREV}</span>`;
-    const NEXT = ` <span class="control control-=next" type="button" id="next-btn">${this.FA_NEXT}</span>`;
+    const NEXT = ` <span class="control control--next" type="button" id="next-btn">${this.FA_NEXT}</span>`;
 
     controls.setAttribute('class', 'controls');
     controls.innerHTML = PAUSE + PREV + NEXT;
